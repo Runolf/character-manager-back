@@ -1,0 +1,27 @@
+<h1>Characters</h1>
+<%=link_to 'Add a character', new_character_path, class:"btn btn-secondary" %>
+<table class="table table-striped table-hover table-bordered w-50 justify-content-center">
+  <thead class="table-dark">
+  <tr>
+    <th scope="col">Name</th>
+    <th scope="col"> Player </th>
+    <th scope="col">Game</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @characters.each do |char| %>
+    <tr>
+      <td><%= char.firstname %> <%= char.lastname %></td>
+      <td><%= char.player %></td>
+      <td><%= char.game.title %></td>
+
+      <td><%= link_to 'Show', character_path(char) %></td>
+      <td><%= link_to 'Edit', edit_character_path(char) %></td>
+      <td><%= link_to 'Delete', char, method: :delete, data: {confirm: "are you sure?"} %></td>
+
+    </tr>
+  <% end %>
+  </tbody>
+</table>

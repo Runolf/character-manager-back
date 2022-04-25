@@ -1,0 +1,54 @@
+<h1>Add a new character</h1>
+
+<%= form_with scope: :character, url: characters_path, local: true do |form| %>
+
+  <div class="field">
+    <%= form.text_field :firstname, class:"form-control", placeholder:"first name" %>
+  </div>
+  <br/>
+
+  <div class="field">
+    <%= form.text_field :lastname, class:"form-control", placeholder:"last name" %>
+  </div>
+  <br/>
+
+  <div class="field">
+    <%= form.text_field :gender, class:"form-control", placeholder:"gender" %>
+  </div>
+  <br/>
+
+  <div class="field">
+    <%= form.text_field :player, class:"form-control", placeholder:"player" %>
+  </div>
+  <br/>
+
+  <div class="field">
+    <%= form.text_field :race, class:"form-control", placeholder:"race" %>
+  </div>
+  <br/>
+
+  <div class="field">
+    <%= form.text_field :job, class:"form-control", placeholder:"job" %>
+  </div>
+  <br/>
+
+  <div class="field">
+    <%= form.text_field :origin, class:"form-control", placeholder:"origin" %>
+  </div>
+  <br/>
+
+  <div class="field">
+    <%= form.number_field :age, class:"form-control", placeholder:"age" %>
+  </div>
+  <br/>
+
+  <div class="field">
+    <%= form.text_area :background, class:"form-control", placeholder:"background" %>
+  </div>
+  <br/>
+
+  <br/>
+  <div class="actions">
+    <%= form.submit class:"btn btn-secondary mb-3" %>
+  </div>
+<% end %>

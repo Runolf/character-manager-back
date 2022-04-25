@@ -1,0 +1,23 @@
+<h1>Games</h1>
+<table class="table table-striped table-hover table-bordered w-50 justify-content-center">
+  <thead class="table-dark">
+  <tr>
+    <th scope="col">Game name</th>
+    <th scope="col"> Type </th>
+    <th scope="col">Owner</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @games.each do |game| %>
+    <tr>
+      <td><%= game.title %></td>
+      <td><%= game.genre %></td>
+      <td><%= game.owner %></td>
+
+      <td><%= link_to 'Show', game_path(game) %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
