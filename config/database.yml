@@ -55,4 +55,4 @@ production:
   host: clwxydcjair55xn0.chr7pe7iynqr.eu-west-1.rds.amazonaws.com
   database: auau83y274b6rra6
   username: q9m9lzid8agne2ch
-  password: puenj87wm2v858ig
+  password: ENV['DBPASS']
