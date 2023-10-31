@@ -5,3 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# Game.create(
+# title: "Ironsworn",
+# genre: "Dark fantasy",
+# owner: "Shawn Tomkins"
+# )
+
+
+User.create(
+  pseudo: "Alex",
+  email: "runolf@hotmail.com",
+  isadmin: true,
+  created_at: Time.now,
+  updated_at: Time.now,
+  password: "Runolf"
+)

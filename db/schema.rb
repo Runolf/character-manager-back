@@ -10,9 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_21_095501) do
+ActiveRecord::Schema.define(version: 2022_04_15_145758) do
 
-  create_table "characters", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "characters", id: :serial, force: :cascade do |t|
     t.string "player", limit: 300
     t.string "firstname", limit: 300
     t.string "lastname", limit: 300
@@ -26,26 +29,21 @@ ActiveRecord::Schema.define(version: 2022_04_21_095501) do
     t.index ["game_id"], name: "game_id"
   end
 
-  create_table "games", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "games", id: :serial, force: :cascade do |t|
     t.string "title", limit: 300
     t.string "genre", limit: 300
     t.string "image", limit: 500
     t.string "owner", limit: 300
   end
 
-  create_table "jwt_blacklist", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "jti", null: false
-    t.index ["jti"], name: "index_jwt_blacklist_on_jti"
-  end
-
-  create_table "user_games", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "user_games", force: :cascade do |t|
     t.integer "user_id"
     t.integer "game_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "pseudo"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

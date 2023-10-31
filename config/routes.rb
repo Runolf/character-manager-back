@@ -16,7 +16,8 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      devise_for :user
+      resources :users
+      post '/users/connect', to: 'users#connect'
       resources :games
       resources :characters
     end

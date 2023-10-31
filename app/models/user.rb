@@ -1,14 +1,17 @@
+#     t.string "pseudo"
+#     t.datetime "created_at", precision: 6, null: false
+#     t.datetime "updated_at", precision: 6, null: false
+#     t.string "password"
+#     t.boolean "isadmin"
+#     t.string "email", default: "", null: false
+#     t.string "encrypted_password", default: "", null: false
+#     t.string "reset_password_token"
+#     t.datetime "reset_password_sent_at"
+#     t.datetime "remember_created_at"
+#     t.index ["email"], name: "index_users_on_email", unique: true
+#     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
 class User < ApplicationRecord
-  extend Devise::Models
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable,
-         :registerable,
-         :recoverable,
-         :rememberable,
-         :validatable
-         # :jwt_authenticatable,
-         # jwt_revocation_strategy: JWTBlacklist
 
   has_many :user_games
   has_many :games, through: :user_games
